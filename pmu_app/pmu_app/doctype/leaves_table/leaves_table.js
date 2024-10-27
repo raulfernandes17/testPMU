@@ -19,7 +19,7 @@ onload: function (frm) {
 
 validate: function (frm) {
     if (frm.doc.from_date === frm.doc.to_date && cint(frm.doc.half_day)) {
-        frm.doc.half_day_date = frm.doc.from_date;
+        f rm.doc.half_day_date = frm.doc.from_date;
     } else if (frm.doc.half_day === 0) {
         frm.doc.half_day_date = "";
     }
