@@ -1,0 +1,154 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-10-27 10:31:12.612226",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "tfg_username",
+  "tfg_name",
+  "section",
+  "leave_type",
+  "from_date",
+  "to_date",
+  "half_day",
+  "half_day_date",
+  "half_day_for",
+  "reason",
+  "total_leave_days",
+  "leave_apply_date",
+  "leave_balance_before_application",
+  "approval_sh",
+  "approval_to",
+  "approval_po",
+  "approval_pd"
+ ],
+ "fields": [
+  {
+   "fieldname": "tfg_username",
+   "fieldtype": "Link",
+   "label": "TFG Username",
+   "options": "TFG_Table"
+  },
+  {
+   "fetch_from": "tfg_username.name1",
+   "fieldname": "tfg_name",
+   "fieldtype": "Data",
+   "label": "TFG Name"
+  },
+  {
+   "fetch_from": "tfg_name.section",
+   "fieldname": "section",
+   "fieldtype": "Data",
+   "label": "Section"
+  },
+  {
+   "fieldname": "leave_type",
+   "fieldtype": "Select",
+   "label": "Leave Type",
+   "options": "Casual Leave\nSick Leave"
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "To Date",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "half_day",
+   "fieldtype": "Check",
+   "label": "Half Day"
+  },
+  {
+   "depends_on": "eval:doc.half_day && doc.from_date && doc.to_date && (doc.from_date != doc.to_date)",
+   "fieldname": "half_day_date",
+   "fieldtype": "Date",
+   "label": "Half Day Date"
+  },
+  {
+   "depends_on": "eval:doc.half_day && doc.from_date && doc.to_date && (doc.from_date != doc.to_date)",
+   "fieldname": "half_day_for",
+   "fieldtype": "Select",
+   "label": "Half Day For",
+   "options": "First Half\nSecond Half"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  },
+  {
+   "fieldname": "total_leave_days",
+   "fieldtype": "Float",
+   "label": "Total Leave Days"
+  },
+  {
+   "fieldname": "leave_balance_before_application",
+   "fieldtype": "Float",
+   "label": "Leave Balance Before Application"
+  },
+  {
+   "fieldname": "approval_sh",
+   "fieldtype": "Select",
+   "label": "Approval SH",
+   "options": "Open\nApproved\nRejected\nCancelled"
+  },
+  {
+   "fieldname": "approval_to",
+   "fieldtype": "Select",
+   "label": "Approval TO",
+   "options": "Open\nApproved\nRejected\nCancelled"
+  },
+  {
+   "fieldname": "approval_po",
+   "fieldtype": "Select",
+   "label": "Approval PO",
+   "options": "Open\nApproved\nRejected\nCancelled"
+  },
+  {
+   "fieldname": "approval_pd",
+   "fieldtype": "Select",
+   "label": "Approval PD",
+   "options": "Open\nApproved\nRejected\nCancelled"
+  },
+  {
+   "fieldname": "leave_apply_date",
+   "fieldtype": "Date",
+   "label": "Leave Apply Date"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-10-27 11:40:37.331052",
+ "modified_by": "Administrator",
+ "module": "Pmu App",
+ "name": "Leaves_Table",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
