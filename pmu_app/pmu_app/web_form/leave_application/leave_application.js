@@ -1,8 +1,26 @@
 frappe.ready(function() {
 	// bind events here
-	frappe.web_form.set_value(["posting_date"], frappe.datetime.get_today())
+	frappe.web_form.set_value(["leave_apply_date"], frappe.datetime.get_today())
 
-	frappe.web_form.set_value(["tfg"], [frappe.session.user])
+	frappe.web_form.set_value(["tfg_username"], [frappe.session.user])
+
+	return frappe.call({
+			
+		method: "pmu_app.pmu_app.web_form.leave_application.leave_application.get_leave_balance_on",
+		args: {
+			tfg_id: frappe.session.user
+			
+			
+			
+		},
+		callback: function (r) {
+			//frappe.msgprint(r);
+			frappe.web_form.set_value(["tfg_name"], [r.message.name1])
+			frappe.web_form.set_value(["section"], [r.message.section])
+
+			
+		},
+	});
 
 	
 
@@ -52,8 +70,16 @@ frappe.ready(function() {
 			
 		frappe.web_form.set_value(["total_leave_days"], number_of_days);
 
+
+		
+
+		
+
 		
 		
 	   });
+
+
+	   
 
 })

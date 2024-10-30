@@ -128,7 +128,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-27 11:40:37.331052",
+ "modified": "2024-10-30 10:21:30.687832",
  "modified_by": "Administrator",
  "module": "Pmu App",
  "name": "Leaves_Table",
@@ -144,6 +144,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "TFG",
    "share": 1,
    "write": 1
   }

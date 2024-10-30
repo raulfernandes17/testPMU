@@ -1,9 +1,9 @@
 {
  "allow_comments": 0,
- "allow_delete": 0,
- "allow_edit": 0,
+ "allow_delete": 1,
+ "allow_edit": 1,
  "allow_incomplete": 0,
- "allow_multiple": 0,
+ "allow_multiple": 1,
  "allow_print": 0,
  "anonymous": 0,
  "apply_document_permissions": 0,
@@ -17,10 +17,32 @@
  "hide_navbar": 0,
  "idx": 0,
  "is_standard": 1,
- "list_columns": [],
- "login_required": 0,
+ "list_columns": [
+  {
+   "fieldname": "leave_apply_date",
+   "fieldtype": "Date",
+   "label": "Leave Apply Date"
+  },
+  {
+   "fieldname": "leave_type",
+   "fieldtype": "Select",
+   "label": "Leave Type"
+  },
+  {
+   "fieldname": "total_leave_days",
+   "fieldtype": "Float",
+   "label": "Total Leave Days"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  }
+ ],
+ "list_title": "Leaves",
+ "login_required": 1,
  "max_attachment_size": 0,
- "modified": "2024-10-27 12:33:08.805113",
+ "modified": "2024-10-30 10:41:37.334921",
  "modified_by": "Administrator",
  "module": "Pmu App",
  "name": "leave-application",
@@ -28,7 +50,7 @@
  "published": 1,
  "route": "leave-application",
  "show_attachments": 0,
- "show_list": 0,
+ "show_list": 1,
  "show_sidebar": 0,
  "title": "Leave Application",
  "web_form_fields": [
@@ -75,6 +97,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
+   "default": "Casual Leave",
    "fieldname": "leave_type",
    "fieldtype": "Select",
    "hidden": 0,
@@ -191,7 +214,7 @@
    "max_length": 0,
    "max_value": 0,
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
@@ -210,6 +233,7 @@
   },
   {
    "allow_read_on_all_link_options": 0,
+   "default": "Open",
    "fieldname": "approval_sh",
    "fieldtype": "Select",
    "hidden": 0,
@@ -218,12 +242,13 @@
    "max_value": 0,
    "options": "Open\nApproved\nRejected\nCancelled",
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
   {
    "allow_read_on_all_link_options": 0,
+   "default": "Open",
    "fieldname": "approval_to",
    "fieldtype": "Select",
    "hidden": 0,
@@ -232,12 +257,13 @@
    "max_value": 0,
    "options": "Open\nApproved\nRejected\nCancelled",
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
   {
    "allow_read_on_all_link_options": 0,
+   "default": "Open",
    "fieldname": "approval_po",
    "fieldtype": "Select",
    "hidden": 0,
@@ -246,12 +272,13 @@
    "max_value": 0,
    "options": "Open\nApproved\nRejected\nCancelled",
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   },
   {
    "allow_read_on_all_link_options": 0,
+   "default": "Open",
    "fieldname": "approval_pd",
    "fieldtype": "Select",
    "hidden": 0,
@@ -260,7 +287,7 @@
    "max_value": 0,
    "options": "Open\nApproved\nRejected\nCancelled",
    "precision": "",
-   "read_only": 0,
+   "read_only": 1,
    "reqd": 0,
    "show_in_filter": 0
   }
